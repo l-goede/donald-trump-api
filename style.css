@@ -15,11 +15,11 @@
 
 :root {
   /* Colors */
-  --primary-color: #b1ede8;
-  --secondary-color: #ff6978;
-  --text-color: #fffcf9;
+  --primary-color: #feeafa;
+  --secondary-color: #cbc0d3;
+  --text-color: #070707;
   --background-color: #f6f9fe;
-  --border-color: #6d435a;
+  --border-color: #bdbec4;
 
   /* Border */
   --border-radius: 0.5rem;
@@ -41,8 +41,4 @@ body {
 .hero__img {
   height: 14em;
   background-color: #f6f9fe;
-}
-
-.input:placeholder {
-  border-bottom: none;
 }
