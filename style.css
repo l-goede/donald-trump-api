@@ -6,3 +6,39 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary-color: #feeafa;
+  --secondary-color: #cbc0d3;
+  --text-color: #070707;
+  --background-color: #f6f9fe;
+  --border-color: #bdbec4;
+
+  /* Border */
+  --border-radius: 0.5rem;
+
+  /* Misc */
+  --transition-delay: 0.2s;
+}
+
+html {
+  font-size: 112.5%;
+}
+
+body {
+  margin: 0;
+  background: var(--background-color);
+  color: var(--text-color);
+}
+
+.hero__img {
+  height: 14em;
+  background-color: #f6f9fe;
+}
