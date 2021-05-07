@@ -8,6 +8,10 @@ const header = createElement('header', {
       className: 'hero__title',
       innerText: 'TRONALD DUMP',
     }),
+    createElement('img', {
+      className: 'hero__img',
+      src: 'img/donaldtrump.png',
+    }),
   ],
 });
 const main = createElement('main', {
@@ -15,7 +19,7 @@ const main = createElement('main', {
   children: [
     createElement('input', {
       className: 'input',
-      placeholder: 'Search for dumbest quotes...',
+      placeholder: 'Search dumbest quotes',
       autofocus: true,
     }),
   ],
@@ -23,7 +27,13 @@ const main = createElement('main', {
 
 const footer = createElement('footer', {
   className: 'footer',
-  children: [createElement('span', { innerText: 'Made with stupidity ' })],
+  children: [
+    createElement('span', { innerText: 'Can`t get enough?' }),
+    createElement('a', {
+      href: 'https://www.youtube.com/watch?v=wi3j1nqLAEA',
+      innerText: 'Click here',
+    }),
+  ],
 });
 
 document.querySelector('#app').append(header, main, footer);
