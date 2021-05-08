@@ -28,7 +28,7 @@ const main = createElement('main', {
 const footer = createElement('footer', {
   className: 'footer',
   children: [
-    createElement('span', { innerText: 'Can`t get enough?' }),
+    createElement('span', { innerText: 'Can`t get enough? ' }),
     createElement('a', {
       href: 'https://www.youtube.com/watch?v=wi3j1nqLAEA',
       innerText: 'Click here',
