@@ -1,5 +1,7 @@
 import './style.css';
-import { createElement } from './utils/elements';
+import { createElement, removeAllChildren } from './utils/elements';
+import { getQuotes } from './utils/api';
+import { createQuoteElement } from './components/quotes';
 
 const header = createElement('header', {
   className: 'hero',
@@ -12,18 +14,23 @@ const header = createElement('header', {
       className: 'hero__img',
       src: 'img/donaldtrump.png',
     }),
-  ],
-});
-const main = createElement('main', {
-  className: 'main',
-  children: [
     createElement('input', {
       className: 'input',
-      placeholder: 'Search dumbest quotes',
+      placeholder: 'Search dumbest quote',
       autofocus: true,
+      onchange: (event) => {
+        removeAllChildren(mainSection);
+
+        const search = event.target.value;
+        getQuotes(search).then((quotes) => {
+          const quotesElements = quotes.map(createQuoteElement);
+          mainSection.append(...quotesElements);
+        });
+      },
     }),
   ],
 });
+const mainSection = createElement('main', { className: 'results' });
 
 const footer = createElement('footer', {
   className: 'footer',
@@ -36,4 +43,4 @@ const footer = createElement('footer', {
   ],
 });
 
-document.querySelector('#app').append(header, main, footer);
+document.querySelector('#app').append(header, mainSection, footer);
