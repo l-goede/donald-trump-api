@@ -1,9 +1,11 @@
-export async function getQuotes(tag) {
-  const promise = fetch(`https://api.tronalddump.io/tag/${tag}`);
+export async function getQuotes(quotes) {
+  const promise = fetch(
+    `https://api.tronalddump.io/search/quote?query=${quotes}`
+  );
   const response = await promise;
   if (response.status === 404) {
     return [];
   }
   const data = await response.json();
-  return data.tag;
+  return data._embedded.quotes;
 }

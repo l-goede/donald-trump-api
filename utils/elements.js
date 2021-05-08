@@ -6,3 +6,6 @@ export function createElement(tagName, { children, ...props } = {}) {
   }
   return element;
 }
+export function removeAllChildren(element) {
+  element.innerHTML = '';
+}
