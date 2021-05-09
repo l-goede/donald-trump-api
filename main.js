@@ -22,6 +22,7 @@ const header = createElement('header', {
         removeAllChildren(mainSection);
 
         const search = event.target.value;
+
         getQuotes(search).then((quotes) => {
           const quotesElements = quotes.map(createQuoteElement);
           mainSection.append(...quotesElements);

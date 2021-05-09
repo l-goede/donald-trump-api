@@ -20,12 +20,6 @@
   --secondary-color: #cbc0d3;
   --text-color: #070707;
   --background-color: #f6f9fe;
-
-  /* Border */
-  --border-radius: 0.5rem;
-
-  /* Misc */
-  --transition-delay: 0.2s;
 }
 
 html {

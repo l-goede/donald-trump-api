@@ -1,0 +1,25 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --primary-color: #feeafa;
+  --secondary-color: #cbc0d3;
+  --text-color: #070707;
+  --background-color: #f6f9fe;
+}
+
+html {
+  font-size: 112.5%;
+}
+.quote-card {
+  display: grid;
+  grid-auto-flow: column;
+  background: var(--secondary-color);
+  border-radius: 0.5em;
+  color: var(--text-color);
+  font-style: italic;
+}
