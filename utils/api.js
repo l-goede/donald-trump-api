@@ -3,9 +3,9 @@ export async function getQuotes(quotes) {
     `https://api.tronalddump.io/search/quote?query=${quotes}`
   );
   const response = await promise;
-  if (response.status === 404) {
+  const data = await response.json();
+  if (data.count === 0) {
     return [];
   }
-  const data = await response.json();
   return data._embedded.quotes;
 }

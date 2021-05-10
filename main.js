@@ -24,6 +24,11 @@ const header = createElement('header', {
         const search = event.target.value;
 
         getQuotes(search).then((quotes) => {
+          if (quotes.length === 0) {
+            const noResult = createElement('p', { innerText: 'no results' });
+            mainSection.append(noResult);
+            return;
+          }
           const quotesElements = quotes.map(createQuoteElement);
           mainSection.append(...quotesElements);
         });
@@ -38,7 +43,10 @@ const footer = createElement('footer', {
   children: [
     createElement('span', { innerText: 'Can`t get enough? ' }),
     createElement('a', {
-      href: 'https://www.youtube.com/watch?v=wi3j1nqLAEA',
+      href: '/random.html',
+      // onclick: () => {
+      //   getRandomQuote().then((randomQuote) => console.log(randomQuote));
+      // },
       innerText: 'Click here',
     }),
   ],
